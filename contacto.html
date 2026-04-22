@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | COMECOT | Tlaxcala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+
+    <header class="header" id="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <span class="logo-text">COMECOT</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="directorio.html">Directorio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contáctanos</h1>
+                <p>Estamos abiertos al diálogo institucional y a la afiliación de nuevos medios que compartan nuestros principios.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    
+                    <div class="contact-info">
+                        <h2 class="section-title">Información</h2>
+                        <p>Únete a nuestra red o solicita información sobre nuestras actividades.</p>
+                        <ul class="contact-details">
+                            <li>
+                                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 4v10h16V8l-8 5-8-5zm8 3l8-5H4l8 5z"/></svg>
+                                contacto@comecot.org
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                Tlaxcala de Xicohténcatl, Tlaxcala
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder=" " required>
+                                <label for="name">Nombre Completo</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder=" " required>
+                                <label for="email">Correo Electrónico</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="5" placeholder=" " required></textarea>
+                                <label for="message">Mensaje</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">Enviar Mensaje</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-copyright" style="border: none; margin: 0; padding: 0;">
+                <p>&copy; 2026 COMECOT. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
