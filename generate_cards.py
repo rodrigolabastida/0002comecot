@@ -1,5 +1,12 @@
 import json
+import unicodedata
 import re
+import os
+
+def slugify(value):
+    value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+    value = re.sub(r'[^\w\s-]', '', value).strip().lower()
+    return re.sub(r'[-\s]+', '-', value)
 
 members = [
     ("Ana Montiel", "Tlaxcala Digital"),
@@ -49,6 +56,9 @@ manual_urls = {
     "385 Grados": "https://385grados.com/"
 }
 
+logos_dir = "/Users/rodrigolabastida/Documents/COMECOT/logos"
+logo_files = os.listdir(logos_dir)
+
 cards_html = ""
 for name, media in members:
     url = "#"
@@ -58,11 +68,24 @@ for name, media in members:
     if media in manual_urls:
         url = manual_urls[media]
     
+    slug = slugify(media)
+    
+    # Check if we have an image file starting with the exact slug
+    matched_logo = None
+    for f in logo_files:
+        if f.startswith(f"{slug}."):
+            matched_logo = f
+            break
+            
+    if matched_logo:
+        logo_html = f'<div class="media-logo-container" style="height: 180px; overflow: hidden; background: #fff; display:flex; align-items:center; justify-content:center;"><img src="logos/{matched_logo}" alt="{media} logo" style="width: 100%; height: 100%; object-fit: contain;"></div>'
+    else:
+        # Revert to text if missing
+        logo_html = f'<div class="media-logo-placeholder">{media}</div>'
+
     card = f"""
                     <div class="media-card">
-                        <div class="media-logo-placeholder">
-                            {media}
-                        </div>
+                        {logo_html}
                         <div class="media-card-content">
                             <h3>{media}</h3>
                             <p style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">{name}</p>
